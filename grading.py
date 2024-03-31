@@ -7,7 +7,7 @@ import json
 import pandas as pd
 import sys
 
-VERSI = "v1.1"
+VERSI = "v1.2"
 
 if len(sys.argv) != 2:
     print("Usage: python grading [argumen]")
