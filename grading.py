@@ -97,7 +97,7 @@ elif arg == "update":
 
     versi_tools = response_obj[0]['versi']  
 
-    if versi_tools > VERSI:
+    if versi_tools != VERSI:
         url = 'https://raw.githubusercontent.com/khuluqilkarim/grading/master/grading.py'
         file_name = 'grading.py'
         urllib.request.urlretrieve(url, file_name)
