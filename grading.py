@@ -1,10 +1,14 @@
 import requests
+import urllib.request
 from time import sleep
 from rich.console import Console
 from datetime import datetime
 import json
 import pandas as pd
 import sys
+import os
+
+VERSI = "v1.1"
 
 if len(sys.argv) != 2:
     print("Usage: python grading [argumen]")
@@ -13,6 +17,19 @@ if len(sys.argv) != 2:
 arg = sys.argv[1]
 URL = "https://example-cyndi.000webhostapp.com/grading.php"
 URLSCORE = "https://example-cyndi.000webhostapp.com/score.php"
+UPDATE = "https://example-cyndi.000webhostapp.com/update/update.php"
+
+response_update = requests.get(UPDATE)
+response_obj = json.loads(response_update.text)
+versi_tools = response_obj['versi']
+
+if versi_tools != VERSI:
+    url = 'https://raw.githubusercontent.com/khuluqilkarim/grading/master/grading.py'
+    file_name = 'grading.py'
+    sys.exit(1)
+
+# Mendownload file dari URL
+urllib.request.urlretrieve(url, file_name)
 
 console = Console()
 
