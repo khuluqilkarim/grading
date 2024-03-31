@@ -7,7 +7,7 @@ import json
 import pandas as pd
 import sys
 
-VERSI = "v1.3"
+VERSI = "v1.4"
 
 if len(sys.argv) != 2:
     print("Usage: python grading [argumen]\n-> \033[32mstart\033[0m\tstart grading\n-> \033[32mscore\033[0m\tLeader board\n-> \033[32mupdate\033[0m\tupdate grading tool")
@@ -101,6 +101,7 @@ elif arg == "update":
         url = 'https://raw.githubusercontent.com/khuluqilkarim/grading/master/grading.py'
         file_name = 'grading.py'
         urllib.request.urlretrieve(url, file_name)
+        console.log("You are on the latest version now")
         sys.exit(1)
     else:
         console.log("You are on the latest version")
