@@ -1,9 +1,3 @@
-if [ $# -eq 0 ]; then
-    echo "Usage: grading <argumen>"
-	echo "-> start"
-	echo "-> score"
-    exit 1
-fi
  
 argumen=$1
 python3 $path/grading.py $argumen

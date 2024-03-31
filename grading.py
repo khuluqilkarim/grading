@@ -7,10 +7,10 @@ import json
 import pandas as pd
 import sys
 
-VERSI = "v1.2"
+VERSI = "v1.3"
 
 if len(sys.argv) != 2:
-    print("Usage: python grading [argumen]")
+    print("Usage: python grading [argumen]\n-> \033[32mstart\033[0m\tstart grading\n-> \033[32mscore\033[0m\tLeader board\n-> \033[32mupdate\033[0m\tupdate grading tool")
     sys.exit(1)
 
 arg = sys.argv[1]
